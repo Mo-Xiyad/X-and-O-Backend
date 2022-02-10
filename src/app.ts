@@ -4,8 +4,12 @@ import { shared } from "./shared";
 
 const app = express();
 
-app.use(cors());
-app.use(express.json())
+app.use(
+  cors({
+    origin: "http://localhost:3003",
+  })
+);
+app.use(express.json());
 
 app.get("/waiting", (req, res) => {
   res.send({
