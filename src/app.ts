@@ -4,11 +4,23 @@ import { shared } from "./shared";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "http://localhost:3003",
-  })
-);
+const whitelist = [
+  "https://striv-tic-tac-toe.herokuapp.com",
+  "http://localhost:3000",
+];
+
+const corsOptions = {
+  origin: function (origin: any, next: any) {
+    if (!origin || whitelist.indexOf(origin) !== -1) {
+      next(null, true);
+    } else {
+      next(new Error("CROSS ORIGIN ERROR"));
+    }
+  }
+};
+
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 app.get("/waiting", (req, res) => {
