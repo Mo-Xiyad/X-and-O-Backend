@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_PATH=./src jest",
+    "watch": "NODE_PATH=./src jest --watchAll",
+    "dev": "NODE_PATH=./src ts-node-dev ./src"
   },
   "keywords": [],
   "author": "",
