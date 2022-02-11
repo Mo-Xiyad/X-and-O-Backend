@@ -7,7 +7,7 @@ import { isGameOver } from "./utils/isGameOver";
 
 const httpServer = http.createServer(app)
 
-const whitelist = ["https://striv-tic-tac-toe.herokuapp.com", "http://localhost:3000"];
+const whitelist = ["https://x-and-o-game.vercel.app", "http://localhost:3000"];
 
 const corsOptions = {
   origin: function (origin:any, next:any) {

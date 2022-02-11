@@ -4,10 +4,7 @@ import { shared } from "./shared";
 
 const app = express();
 
-const whitelist = [
-  "https://striv-tic-tac-toe.herokuapp.com",
-  "http://localhost:3000",
-];
+const whitelist = ["https://x-and-o-game.vercel.app", "http://localhost:3000"];
 
 const corsOptions = {
   origin: function (origin: any, next: any) {
