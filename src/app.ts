@@ -17,7 +17,11 @@ const corsOptions = {
 };
 
 
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin: "https://x-and-o-game.vercel.app",
+  })
+);
 app.use(express.json());
 
 app.get("/waiting", (req, res) => {

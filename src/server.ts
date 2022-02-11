@@ -21,8 +21,9 @@ const corsOptions = {
 };
 
 
+
 const io = new Server(httpServer, {
-  cors: corsOptions,
+  cors: { origin: "https://x-and-o-game.vercel.app"},
 });
 
 io.on("connection", (socket) => {
