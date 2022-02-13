@@ -31,6 +31,7 @@ io.on("connection", (socket) => {
 
     socket.on("loggedIn", ({ name, symbol }: { name: string, symbol: "X" | "O" }) => {
         console.log(name + " is waiting for a game...")
+        console.log(name + " Symbol is " + symbol)
 
         const onDisconnect = () => {
             console.log("Client " + socket.id + " disconnected");
